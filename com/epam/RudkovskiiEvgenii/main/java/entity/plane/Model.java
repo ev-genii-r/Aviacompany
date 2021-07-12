@@ -2,7 +2,7 @@ package entity.plane;
 
 import java.util.Objects;
 
-public class Model {
+public class Model extends abstractEntity{
 
     private int id;
     private String name;

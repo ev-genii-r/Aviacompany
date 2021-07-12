@@ -13,15 +13,13 @@ public class PlaneConstructor {
         String engineData;
         String modelData;
         String planeData;
-
         try {
-            engineData = Reader.readFile("engine");
-            modelData = Reader.readFile("model");
-            planeData = Reader.readFile("plane");
+            engineData = Reader.readFile("D:\\3)Учеба\\aviacompany\\src\\com\\epam\\RudkovskiiEvgenii\\main\\resources\\engine");
+            modelData = Reader.readFile("D:\\3)Учеба\\aviacompany\\src\\com\\epam\\RudkovskiiEvgenii\\main\\resources\\model");
+            planeData = Reader.readFile("D:\\3)Учеба\\aviacompany\\src\\com\\epam\\RudkovskiiEvgenii\\main\\resources\\plane");
         } catch (IOException e) {
             return null;
         }
-
         Selector selector = new Selector();
         ArrayList<String> engineString = selector.cutWord(engineData);
         ArrayList<String> modelString = selector.cutWord(modelData);
@@ -33,6 +31,7 @@ public class PlaneConstructor {
             selector.parceWord(engineString.get(i), engine);
             engines.add(engine);
         }
+
 
         ArrayList<Model> models = new ArrayList<>();
         for (int i = 0; i < modelString.size(); i++){
@@ -47,7 +46,6 @@ public class PlaneConstructor {
             selector.parceWord(planeString.get(i), plane, models);
             planes.add(plane);
         }
-
         return planes;
     }
 }

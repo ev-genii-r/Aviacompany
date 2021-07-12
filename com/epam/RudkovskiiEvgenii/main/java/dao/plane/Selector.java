@@ -94,12 +94,11 @@ public class Selector {
         String name;
         int speed;
         int fuelConsumption;
-
         try {
             id = Integer.parseInt(findElement(word, 0));
             name = findElement(word, 1);
             speed = Integer.parseInt(findElement(word, 2));
-            fuelConsumption = Integer.parseInt(word, 3);
+            fuelConsumption = Integer.parseInt(findElement(word, 3));
         }catch (Exception ex){
             return false;
         }

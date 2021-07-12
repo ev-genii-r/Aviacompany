@@ -2,7 +2,7 @@ package entity.plane;
 
 import java.util.ArrayList;
 
-public class PlaneList {
+public class PlaneList{
     private ArrayList<Plane> planes;
     private int size;
 
@@ -23,6 +23,7 @@ public class PlaneList {
     }
 
     public int getSize() {
+        size = planes.size();
         return size;
     }
 
@@ -35,6 +36,7 @@ public class PlaneList {
         return planes.get(index);
     }
 
+    /*
     public Plane findPlaneById(int id){
         for(int i = 0; i < planes.size(); i++){
             if(findPlaneByIndex(i).getId() == id){
@@ -52,6 +54,7 @@ public class PlaneList {
         }
         return null;
     }
+    */
 
     public void changePlanes(int index1, int index2){
         if(index1 > planes.size() || index2 >planes.size()){
@@ -64,5 +67,16 @@ public class PlaneList {
         Plane plane = findPlaneByIndex(index1);
         planes.set(index1, findPlaneByIndex(index2));
         planes.set(index2, plane);
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i = 0; i < planes.size(); i++){
+            stringBuilder.append("Plane: " + planes.get(i).toString() +
+                    "\n   Model: " + planes.get(i).getModel().toString() +
+                    "\n   Engine: " + planes.get(i).getModel().getEngine().toString()+ '\n');
+        }
+        return stringBuilder.toString();
     }
 }

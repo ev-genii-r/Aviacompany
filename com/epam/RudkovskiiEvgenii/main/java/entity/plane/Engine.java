@@ -1,7 +1,7 @@
 package entity.plane;
 
 
-public class Engine {
+public class Engine extends abstractEntity{
     private int id;
     private String name;
     private int speed;
