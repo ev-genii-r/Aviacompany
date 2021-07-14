@@ -36,25 +36,9 @@ public class PlaneList{
         return planes.get(index);
     }
 
-    /*
-    public Plane findPlaneById(int id){
-        for(int i = 0; i < planes.size(); i++){
-            if(findPlaneByIndex(i).getId() == id){
-                return findPlaneByIndex(i);
-            }
-        }
-        return null;
+    public void addPlane(Plane plane){
+        planes.add(plane);
     }
-
-    public Plane findPlaneByName(String name){
-        for(int i = 0; i < planes.size(); i++){
-            if(findPlaneByIndex(i).getName() == name){
-                return findPlaneByIndex(i);
-            }
-        }
-        return null;
-    }
-    */
 
     public void changePlanes(int index1, int index2){
         if(index1 > planes.size() || index2 >planes.size()){
